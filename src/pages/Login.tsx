@@ -1,8 +1,12 @@
 import { Button, Card, Container, Grid, TextField } from "@mui/material";
 import { Header } from "../components/Header";
 import { LoginDTO } from "../models/login.model";
+import { useAppDispatch } from "../config/hooks";
+import { realizarLoginThunk } from "../config/modules/aluno.slice";
 
 export const Login = () => {
+
+    const dispatch = useAppDispatch()
 
     const submeterLogin = (event: any) => {
         event.preventDefault();
@@ -12,11 +16,9 @@ export const Login = () => {
             senha: event.target.senha.value
         }
 
-        console.log(data);
-        
-    };
+       dispatch(realizarLoginThunk(data));
 
-    
+    }
     return (
         <>
             <Header />
