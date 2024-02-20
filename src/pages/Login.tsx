@@ -1,7 +1,21 @@
 import { Button, Card, Container, Grid, TextField } from "@mui/material";
 import { Header } from "../components/Header";
+import { LoginDTO } from "../models/login.model";
 
 export const Login = () => {
+
+    const submeterLogin = (event: any) => {
+        event.preventDefault();
+        
+        const data: LoginDTO = {
+            email: event.target.email.value,
+            senha: event.target.senha.value
+        }
+
+        console.log(data);
+        
+    }
+
     return (
         <>
             <Header />
@@ -9,7 +23,7 @@ export const Login = () => {
                 <h1>Hello world</h1>
 
                 <Card>
-                    <form>
+                    <form onSubmit={submeterLogin}>
                         <Grid container spacing={2} padding={2}>
                             <Grid item xs={12} md={6}>
                                 <TextField fullWidth name="E-mail" label="E-mail" type="email"/>
