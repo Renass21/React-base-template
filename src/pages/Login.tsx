@@ -14,8 +14,9 @@ export const Login = () => {
 
         console.log(data);
         
-    }
+    };
 
+    
     return (
         <>
             <Header />

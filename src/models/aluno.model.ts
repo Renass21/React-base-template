@@ -1,4 +1,4 @@
-interface Aluno {
+export interface Aluno {
    
     id: String,
     nome: String,
